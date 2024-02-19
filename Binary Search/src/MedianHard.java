@@ -1,9 +1,43 @@
-import java.util.ArrayList;
-import java.util.List;
+// import java.util.ArrayList;
+// import java.util.List;
 
 public class MedianHard {
 
+  public double solver(int[] nums1, int n, int[] nums2, int m) {
+    if (n > m) {
+      return solver(nums2, m, nums1, n); // To get min(m,n) in TC O(min(logm, logn))
+    }
+
+    int l = 0;
+    int r = n;
+
+    while (l <= r) {
+      int px = (l + r) / 2;
+      int py = (m + n + 1) / 2 - px;
+
+      int maxLx = px == 0 ? Integer.MIN_VALUE : nums1[px - 1];
+      int minRx = px == n ? Integer.MAX_VALUE : nums1[px];
+
+      int maxLy = py == 0 ? Integer.MIN_VALUE : nums2[py - 1];
+      int minRy = py == m ? Integer.MAX_VALUE : nums2[py];
+
+      if (maxLx <= minRy && maxLy <= minRx) {
+        if ((m + n )% 2 == 0) {
+          return (double) ((double) Math.max(maxLx, maxLy) + (double) Math.min(minRx, minRy)) / 2;
+        } else {
+          return (double) Math.max(maxLx, maxLy);
+        }
+      } else if (maxLx > minRy) {
+        r = px - 1;
+      } else {
+        l = px + 1;
+      }
+    }
+    return (double) 0;
+  }
+
   public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+    return solver(nums1, nums1.length, nums2, nums2.length);
 
     // OPTIMAL - 2 Pointer
     // int totalLength = nums1.length + nums2.length;
@@ -52,7 +86,7 @@ public class MedianHard {
   }
 
   public static void main(String[] args) {
-    MedianHard solver = new MedianHard();
-    System.out.println(solver.findMedianSortedArrays(new int[] { 1, 2 }, new int[] { 3 }));
+    MedianHard m = new MedianHard();
+    System.out.println(m.findMedianSortedArrays(new int[] { 1, 2 }, new int[] { 3, 4 }));
   }
 }
