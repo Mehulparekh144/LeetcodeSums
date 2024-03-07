@@ -20,7 +20,7 @@ public class CombinationSumMedium {
     }
     // Not choose
     solve(candidates, target, i + 1, temp);
-  }
+    }
 
   public List<List<Integer>> combinationSum(int[] candidates, int target) {
     result = new ArrayList<>();
@@ -28,4 +28,8 @@ public class CombinationSumMedium {
     return result;
   }
 
+  public static void main(String[] args) {
+    CombinationSumMedium solver = new CombinationSumMedium();
+    System.out.println(solver.combinationSum(new int[] { 1, 2, 3 }, 4));
+  }
 }
