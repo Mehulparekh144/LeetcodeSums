@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 public class CountSubsetsOfKMedium {
 
+
+
   public static int findWaysOptimized(int[] nums, int tar) {
     // Write your code here.
     int[][] dp = new int[nums.length][tar + 1];
