@@ -2,7 +2,7 @@ package String;
 
 import java.util.Arrays;
 
-public class LCS {
+public class LongestCommonSubsequence {
   //SPACE OPTIMIZATION
   public int longestCommonSubsequenceSO(String text1, String text2) {
     // Shifting of indices only for tabulation.
