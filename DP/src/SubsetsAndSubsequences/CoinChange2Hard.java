@@ -58,7 +58,7 @@ public class CoinChange2Hard {
   }
 
   //RECURSION + MEMOIZATION
-  int[][] dp;
+//  int[][] dp;
   public int solve(int i , int amount , int[] coins){
     if(i == 0){
       if(amount%coins[0] == 0){

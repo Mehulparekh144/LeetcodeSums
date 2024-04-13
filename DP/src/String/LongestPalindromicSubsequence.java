@@ -1,5 +1,7 @@
 package String;
 
+import java.util.Arrays;
+
 public class LongestPalindromicSubsequence {
 
   //SPACE OPTIMIZATION

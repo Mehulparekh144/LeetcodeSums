@@ -1,7 +1,30 @@
-import java.util.Arrays;
 import java.util.Stack;
 
 public class LargestHistogramMedium {
+
+  // OPTIMAL
+  public int largestRectangleAreaOptimal(int[] heights) {
+    Stack<Integer> st = new Stack<Integer>();
+    int max = 0;
+
+    for (int i = 0; i <= heights.length; i++) {
+      while (!st.isEmpty() && (i == heights.length || heights[st.peek()] >= heights[i])) {
+        int h = heights[st.pop()];
+        int w = 0;
+        if (st.isEmpty()) {
+          w = i;
+        } else {
+          w = i - st.peek() - 1;
+        }
+        int a = h * w;
+        max = Math.max(a, max);
+      }
+
+      st.push(i);
+    }
+
+    return max;
+  }
 
   public int largestRectangleArea(int[] heights) {
     int[] nsl = new int[heights.length];
