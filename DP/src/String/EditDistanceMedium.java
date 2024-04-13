@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class EditDistanceMedium {
 
-  //SPACE OPTIMIZATION
+  //SPACE OPTIMIZATION  
   public int minDistanceSO(String word1, String word2) {
     int[] prev = new int[word2.length() + 1];
     int[] curr = new int[word2.length() + 1];
