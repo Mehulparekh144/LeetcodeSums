@@ -1,5 +1,7 @@
 package Stocks;
 
+import java.util.Arrays;
+
 public class BestTimeToBSTCooldownMedium {
 
   //SPACE OPTIMIZATION
