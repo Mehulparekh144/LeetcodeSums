@@ -30,8 +30,8 @@ public class DisjointSet {
     int pv = findUPar(v);
     if(pu == pv) return;
 
-    int sizeU = rank.get(pu);
-    int sizeV = rank.get(pv);
+    int sizeU = size.get(pu);
+    int sizeV = size.get(pv);
 
     if(sizeU > sizeV){
       parent.set(pv , pu);
