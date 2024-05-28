@@ -2,7 +2,7 @@ package otheralgos;
 
 import java.util.*;
 
-public class ArticulationPoint {
+public class ArticulationPointHard {
 	private int timer = 1;
 	public ArrayList<Integer> articulationPoints(int V, ArrayList<ArrayList<Integer>> adj)
 	{
@@ -57,7 +57,7 @@ public class ArticulationPoint {
 	}
 
 	public static void main(String[] args) {
-		ArticulationPoint obj = new ArticulationPoint();
+		ArticulationPointHard obj = new ArticulationPointHard();
 		List<List<Integer>> graph = List.of(
 						List.of(1), List.of(0, 4),
 						List.of(3, 4), List.of(4, 2), List.of(1, 2, 3)
